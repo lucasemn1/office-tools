@@ -23,7 +23,7 @@
 
       <a
         class="btn btn-outline-secondary"
-        href="https://www.linkedin.com/in/lucas-emn/"
+        href="https://github.com/lucasemn1"
         target="_blank"
         rel="noopener noreferrer"
       >
