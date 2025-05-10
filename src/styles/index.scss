@@ -1,0 +1,12 @@
+$font-family-base: "Raleway", sans-serif;
+
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "./layouts.scss";
+@import "./typography.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
