@@ -10,19 +10,19 @@ A primeira funcionalidade disponível é um **parser de telefones celulares bras
 
 ---
 
-## 📸 Demonstração
+## 📸 Demonstrações
 
 ### Digitando na caixa de texto
 
-![Preview do Office Tools](https://office-tools-app.netlify.app/docs/type-phone.gif)
+![Preview do Office Tools](https://office-tools-app.netlify.app/assets/docs/type-phone.gif)
 
 ### Copiando o telefone
 
-![Preview do Office Tools](https://office-tools-app.netlify.app/docs/copy-phone.gif)
+![Preview do Office Tools](https://office-tools-app.netlify.app/assets/docs/copy-phone.gif)
 
 ## Alternando o tema (escuro/claro)
 
-![Preview do Office Tools](https://office-tools-app.netlify.app/docs/toggle-theme.gif)
+![Preview do Office Tools](https://office-tools-app.netlify.app/assets/docs/toggle-theme.gif)
 
 ---
 
