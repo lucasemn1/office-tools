@@ -13,11 +13,7 @@
         </div>
 
         <template v-if="toBeValidated">
-          <div
-            v-if="parsedValue.isValid && DocumentUtils.validateCpf(onlyNumbers)"
-          >
-            {{ type }} válido ✅
-          </div>
+          <div v-if="parsedValue.isValid">{{ type }} válido ✅</div>
           <div v-else>{{ type }} inválido ❌</div>
         </template>
       </form>
