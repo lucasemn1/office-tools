@@ -1,7 +1,8 @@
 import { onBeforeMount, ref } from "vue";
 import { defineStore } from "pinia";
-import { Theme, ThemeService } from "../services/theme";
+import { ThemeService } from "../services/theme";
 import { ThemeRepository } from "../repositories/theme";
+import type { Theme } from "../constants/enums";
 
 export const useThemeStore = defineStore("theme-store", () => {
   const themeService = new ThemeService(new ThemeRepository());

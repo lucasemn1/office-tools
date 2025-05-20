@@ -30,42 +30,10 @@
 
       <template v-if="onlyNumbers !== ''">
         <hr />
-
-        <div class="result">
-          <div>
-            <h6>Telefone formatado 💬</h6>
-            <h4 class="mb-0">
-              <strong>
-                {{ formattedValue }}
-              </strong>
-            </h4>
-          </div>
-
-          <button
-            class="btn btn-secondary p-2"
-            @click="() => handleCopyToClipboard(formattedValue)"
-          >
-            <v-icon name="io-copy" />
-          </button>
-        </div>
+        <copy-card :value="formattedValue" label="Telefone formatado 💬" />
 
         <hr />
-
-        <div class="result">
-          <div>
-            <h6>Somente os números 🔢</h6>
-            <h4 class="mb-0">
-              <strong>{{ onlyNumbers }} </strong>
-            </h4>
-          </div>
-
-          <button
-            class="btn btn-secondary p-2"
-            @click="() => handleCopyToClipboard(onlyNumbers)"
-          >
-            <v-icon name="io-copy" />
-          </button>
-        </div>
+        <copy-card :value="onlyNumbers" label="Somente os números 🔢" />
       </template>
     </div>
   </div>
@@ -74,16 +42,15 @@
 <script lang="ts" setup>
 import { computed, ref } from "vue";
 import { PhoneUtils } from "../../utils/phone";
-import { useToastStackStore } from "../../stores/toast-stack";
-import { ToastModel } from "../../models/toast";
 
-const toastStack = useToastStackStore();
+import CopyCard from "../copy-card/index.vue";
+import { NumberUtils } from "../../utils/number";
 
 const autoInitWithZero = ref(false);
 
 const rawContent = ref("");
 const onlyNumbers = computed(() => {
-  const onlyNumbers = PhoneUtils.getOnlyNumbers(rawContent.value);
+  const onlyNumbers = NumberUtils.getOnlyNumbers(rawContent.value, 12);
 
   if (autoInitWithZero.value && !onlyNumbers.startsWith("0")) {
     return `0${onlyNumbers}`;
@@ -94,13 +61,6 @@ const onlyNumbers = computed(() => {
 const formattedValue = computed(() => {
   return PhoneUtils.parse(onlyNumbers.value);
 });
-
-function handleCopyToClipboard(value: string) {
-  navigator.clipboard.writeText(value);
-  toastStack.push(
-    new ToastModel("Copiado para área de transferência!", "secondary")
-  );
-}
 </script>
 
 <style lang="scss" scoped>
@@ -121,12 +81,6 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-
-.result {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .card-body {

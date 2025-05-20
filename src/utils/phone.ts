@@ -1,8 +1,4 @@
 export class PhoneUtils {
-  public static getOnlyNumbers(raw: string) {
-    return raw.replace(/\D/g, "").slice(0, 12);
-  }
-
   public static parse(onlyNumbers: string) {
     const startsWithZero = onlyNumbers.startsWith("0");
     const localOnlyNumbers = onlyNumbers.padEnd(startsWithZero ? 12 : 11, " ");

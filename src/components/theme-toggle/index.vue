@@ -12,7 +12,7 @@
 <script lang="ts" setup>
 import { computed } from "vue";
 import { useThemeStore } from "../../stores/theme";
-import { Theme } from "../../services/theme";
+import { Theme } from "../../constants/enums";
 
 const themeStore = useThemeStore();
 const theme = computed(() => themeStore.theme);

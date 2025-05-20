@@ -6,6 +6,7 @@ import {
 
 import AppLayout from "../layouts/app.vue";
 import PhoneParserPage from "../pages/phone-parser/index.vue";
+import CpfAndCnpjParser from "../pages/cpf-and-cnpj-parser/index.vue";
 
 const appRoutes: RouteRecordRaw[] = [
   {
@@ -18,6 +19,14 @@ const appRoutes: RouteRecordRaw[] = [
     name: "phone-parser",
     meta: { title: "Formatador de telefone" },
     component: PhoneParserPage,
+  },
+  {
+    path: "/cpf-and-cnpj-parser",
+    name: "cpf-and-cnpj-parser",
+    meta: {
+      title: "Formatador e validador de CPF e CNPJ",
+    },
+    component: CpfAndCnpjParser,
   },
 ];
 
